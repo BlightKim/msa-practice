@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: auth-service
+  security:
+    oauth2.client:
+      registration:
+        kakaoTalk:
+          client-id:
+          client-secret: ${CLIENT_SECRET}
+          client-authentication-method: post
+          authorization-grant-type: authorization_code
+          redirect-uri: http://localhost:3000/auth/login
+          scope: profile_nickname, profile_image
+
+

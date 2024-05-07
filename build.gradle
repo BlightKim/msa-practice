@@ -1,0 +1,31 @@
+plugins {
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+allprojects {
+    group = "com.sebin"
+    version = '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java-library'
+    apply plugin: 'io.spring.dependency-management'
+
+
+    compileJava {
+        sourceCompatibility = 21
+        targetCompatibility = 21
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    tasks.test {
+        useJUnitPlatform()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+        }
+    }
+}
