@@ -1,0 +1,40 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306
+    username: root
+    password: 1234
+    driver-class-name:
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+
+
+  security:
+    oauth2.client:
+      provider:
+        kakao:
+          token-uri: https://kauth.kakao.com/oauth/token
+          user-info-uri: https://kapi.kakao.com/v2/user/me
+          user-name-attribute: id
+          authorization-uri: https://kauth.kakao.com/oauth/authorize
+
+      registration:
+        kakao:
+          client-id: ${CLIENT_ID}
+          client-secret: ${CLIENT_SECRET}
+          client-authentication-method: client_secret_post
+          authorization-grant-type: authorization_code
+          redirect-uri: http://localhost:8083/oauth2/callback/kakao
+          scope:
+            - profile_nickname
+            - account_email
+
+
+
+
