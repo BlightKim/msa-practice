@@ -7,13 +7,13 @@ import { sessionStorageSet } from '@/utils';
 import React from "react";
 import Button from "@mui/material/Button";
 import KakaoLoginButton from "@/components/common/AppButton/KakaoButton";
-import {KAKAO_AUTH_URL} from "@/constants/kakaoLogin";
 
 /**
  * Renders login form for user to authenticate
  * @component LoginForm
  */
 const LoginForm = () => {
+
   const router = useRouter();
   const [, dispatch] = useAppStore();
   const onLogout = useEventLogout();
@@ -25,10 +25,9 @@ const LoginForm = () => {
     dispatch({ type: 'LOG_IN' });
     router.replace('/'); // Redirect to home page without ability to go back
   };
-
-  const loginKakao = () => {
-    location.href=KAKAO_AUTH_URL;
-  }
+  const kakaoLogin = () => {
+    window.location.href=`http://localhost:8083/login/oauth2/code/kakao`
+  };
 
   return (
     <Stack alignItems="center" spacing={2} padding={2}>
@@ -78,7 +77,7 @@ const LoginForm = () => {
               </Link>
             </Grid>
           </Grid>
-          <KakaoLoginButton  onClick={loginKakao}/>
+          <KakaoLoginButton  onClick={kakaoLogin}/>
         </Box>
       </Stack>
     </Stack>
