@@ -6,7 +6,7 @@ build/
 !**/src/test/**/build/
 /.idea/*.xml
 *.xml
-
+*.iml
 /front/node_modules
 .apt_generated
 .classpath
