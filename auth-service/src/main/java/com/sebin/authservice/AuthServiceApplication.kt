@@ -1,13 +1,11 @@
-package com.sebin.authservice;
+package com.sebin.authservice
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 
 @SpringBootApplication
-public class AuthServiceApplication {
+class AuthServiceApplication
 
-	public static void main(String[] args) {
-		SpringApplication.run(AuthServiceApplication.class, args);
-	}
-
+fun main(args: Array<String>) {
+    runApplication<AuthServiceApplication>(*args)
 }

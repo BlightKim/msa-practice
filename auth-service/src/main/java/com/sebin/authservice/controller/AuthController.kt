@@ -1,4 +1,14 @@
-package com.sebin.authservice.controller;
+package com.sebin.authservice.controller
 
-public class AuthController {
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+class AuthController {
+    @GetMapping("/login/oauth2/code/{provider}")
+    fun login(): String {
+        return "login"
+    }
+
+
 }
