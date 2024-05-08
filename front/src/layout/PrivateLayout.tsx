@@ -2,6 +2,7 @@ import { FunctionComponent, PropsWithChildren } from 'react';
 import { IS_DEBUG } from '@/config';
 import { LinkToPage } from '@/utils';
 import TopBarAndSideBarLayout from './TopBarAndSideBarLayout';
+import Script from 'next/script';
 
 const TITLE_PRIVATE = '_TITLE_'; // Title for pages after authentication
 
@@ -49,6 +50,7 @@ const PrivateLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
 
   return (
     <TopBarAndSideBarLayout sidebarItems={SIDE_BAR_ITEMS} title={title} variant="sidebarPersistentOnDesktop">
+
       {children}
       {/* <Stack component="footer">Copyright &copy; </Stack> */}
     </TopBarAndSideBarLayout>

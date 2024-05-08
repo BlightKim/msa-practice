@@ -17,6 +17,7 @@ export const metadata: Metadata = {
  * @page Home
  */
 const Home: NextPage = () => {
+
   return (
     <Stack spacing={2} padding={2}>
       <Stack>
