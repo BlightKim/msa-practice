@@ -38,6 +38,7 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@mui/material-nextjs": "latest",
+    "axios": "^1.6.8",
     "clsx": "latest",
     "copy-to-clipboard": "latest",
     "next": "latest",
